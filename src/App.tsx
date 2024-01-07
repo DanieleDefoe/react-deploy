@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 
 export const App = () => {
   const [count, setCount] = useState(0);
@@ -17,6 +17,8 @@ export const App = () => {
         <Link to="about">About</Link>
         <Link to="welcome">Welcome</Link>
       </div>
+
+      <Outlet />
     </div>
   );
 };
