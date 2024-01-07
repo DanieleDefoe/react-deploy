@@ -1,17 +1,13 @@
-import { useState } from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useSearchParams } from 'react-router-dom';
 
 export const App = () => {
-  const [count, setCount] = useState(0);
+  const [searchParams] = useSearchParams();
 
-  const increment = () => setCount((prev) => prev + 1);
-  const decrement = () => setCount((prev) => prev - 1);
+  const id = searchParams.get('id');
 
   return (
     <div>
-      <h1>value = {count}</h1>
-      <button onClick={increment}>+</button>
-      <button onClick={decrement}>-</button>
+      <h1>id = {id}</h1>
 
       <div style={{ display: 'flex', gap: 10 }}>
         <Link to="about">About</Link>
